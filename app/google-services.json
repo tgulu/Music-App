@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "657468885714",
+    "project_id": "apollomusic-ba6f0",
+    "storage_bucket": "apollomusic-ba6f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657468885714:android:3461488954a8db7e8c7b0b",
+        "android_client_info": {
+          "package_name": "com.plcoding.apollomusic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657468885714-sla00i7bvm9ejvev23ptu6h9jdotslst.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDT1_g8eTpmGloOPpkdp3Spbr2TDRToG90"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657468885714-sla00i7bvm9ejvev23ptu6h9jdotslst.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
