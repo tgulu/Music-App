@@ -5,6 +5,6 @@ data class Song (
     val title: String = "",
     val subtitle: String = "",
     val song_url: String = "",
-    val image_url: String = "",
+    val image_url: String = ""
 
     )

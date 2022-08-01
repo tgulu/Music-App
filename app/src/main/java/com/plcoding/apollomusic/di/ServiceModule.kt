@@ -1,12 +1,11 @@
-package com.plcoding.apollomusic.DI
+package com.plcoding.apollomusic.di
 
 import android.content.Context
-import com.bumptech.glide.util.Util
 import com.google.android.exoplayer2.C
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.audio.AudioAttributes
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
-import com.google.android.exoplayer2.util.Util.getUserAgent
+import com.google.android.exoplayer2.util.Util
 import com.plcoding.apollomusic.data.music.remote.MusicDatabase
 import dagger.Module
 import dagger.Provides
@@ -50,5 +49,5 @@ object ServiceModule {
     fun provideDataSourceFactory(
         @ApplicationContext context: Context
 
-    ) = DefaultDataSourceFactory(context, com.google.android.exoplayer2.util.Util.getUserAgent(context, "Apollo App"))
+    ) = DefaultDataSourceFactory(context, Util.getUserAgent(context, "Music Player"))
 }

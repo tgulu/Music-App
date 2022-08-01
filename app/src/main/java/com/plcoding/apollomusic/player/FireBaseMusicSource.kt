@@ -1,4 +1,4 @@
-package com.plcoding.apollomusic.data.music.player
+package com.plcoding.apollomusic.player
 
 import android.support.v4.media.MediaBrowserCompat
 import android.support.v4.media.MediaBrowserCompat.MediaItem.FLAG_PLAYABLE
@@ -88,9 +88,7 @@ class FireBaseMusicSource @Inject constructor(
             action(state == State.STATE_INITIALIZED)
             return true
         }
-
     }
-
 }
 
 

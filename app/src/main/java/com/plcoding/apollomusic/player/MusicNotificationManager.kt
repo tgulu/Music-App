@@ -1,4 +1,4 @@
-package com.plcoding.apollomusic.data.music.player
+package com.plcoding.apollomusic.player
 
 import android.app.PendingIntent
 import android.content.Context
@@ -12,8 +12,8 @@ import com.bumptech.glide.request.transition.Transition
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.ui.PlayerNotificationManager
 import com.plcoding.apollomusic.R
-import com.plcoding.apollomusic.data.music.other.Constant.NOTIFICATION_CHANNEL_ID
-import com.plcoding.apollomusic.data.music.other.Constant.NOTIFICATION_ID
+import com.plcoding.apollomusic.other.Constant.NOTIFICATION_CHANNEL_ID
+import com.plcoding.apollomusic.other.Constant.NOTIFICATION_ID
 
 class MusicNotificationManager(
     private val context: Context,
@@ -50,6 +50,7 @@ class MusicNotificationManager(
     private inner class DescriptionAdapter(
         private val mediasController: MediaControllerCompat
     ) : PlayerNotificationManager.MediaDescriptionAdapter{
+
         override fun getCurrentContentTitle(player: Player): CharSequence {
             return mediasController.metadata.description.title.toString()
         }
@@ -77,13 +78,8 @@ class MusicNotificationManager(
                     }
 
                     override fun onLoadCleared(placeholder: Drawable?) = Unit
-
-
                 })
             return null
         }
-
     }
-
-
 }

@@ -2,7 +2,7 @@ package com.plcoding.apollomusic.data.music.remote
 
 import com.google.firebase.firestore.FirebaseFirestore
 import com.plcoding.apollomusic.data.music.entites.Song
-import com.plcoding.apollomusic.data.music.other.Constant.SONG_COLLECTION
+import com.plcoding.apollomusic.other.Constant.SONG_COLLECTION
 import kotlinx.coroutines.tasks.await
 import java.lang.Exception
 

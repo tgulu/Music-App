@@ -1,11 +1,11 @@
-package com.plcoding.apollomusic.data.music.player.callbacks
+package com.plcoding.apollomusic.player.callbacks
 
 import android.app.Notification
 import android.content.Intent
 import androidx.core.content.ContextCompat
 import com.google.android.exoplayer2.ui.PlayerNotificationManager
-import com.plcoding.apollomusic.data.music.other.Constant.NOTIFICATION_ID
-import com.plcoding.apollomusic.data.music.player.MusicService
+import com.plcoding.apollomusic.other.Constant.NOTIFICATION_ID
+import com.plcoding.apollomusic.player.MusicService
 
 class MusicPlayerNotificationListener(
     private val musicService: MusicService

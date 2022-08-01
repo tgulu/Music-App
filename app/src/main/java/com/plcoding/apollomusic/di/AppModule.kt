@@ -1,10 +1,11 @@
-package com.plcoding.apollomusic.DI
+package com.plcoding.apollomusic.di
 
 import android.content.Context
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.plcoding.apollomusic.R
+import com.plcoding.apollomusic.player.MusicServiceConnection
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,6 +18,12 @@ import javax.inject.Singleton
 @InstallIn(ApplicationComponent::class)
 
 object AppModule {
+
+    @Singleton
+    @Provides
+    fun providesMusicServiceConnection(
+        @ApplicationContext context: Context
+    ) = MusicServiceConnection(context)
 
     @Singleton
     @Provides

@@ -1,4 +1,4 @@
-package com.plcoding.apollomusic.data.music.player.callbacks
+package com.plcoding.apollomusic.player.callbacks
 
 import android.net.Uri
 import android.os.Bundle
@@ -8,7 +8,7 @@ import android.support.v4.media.session.PlaybackStateCompat
 import com.google.android.exoplayer2.ControlDispatcher
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector
-import com.plcoding.apollomusic.data.music.player.FireBaseMusicSource
+import com.plcoding.apollomusic.player.FireBaseMusicSource
 
 class MusicPlaybackPrepare(
     private val fireBaseMusicSource: FireBaseMusicSource,

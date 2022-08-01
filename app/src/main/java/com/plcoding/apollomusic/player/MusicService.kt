@@ -1,4 +1,4 @@
-package com.plcoding.apollomusic.data.music.player
+package com.plcoding.apollomusic.player
 
 import android.app.PendingIntent
 import android.content.Intent
@@ -13,15 +13,16 @@ import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector
 import com.google.android.exoplayer2.ext.mediasession.TimelineQueueNavigator
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
-import com.plcoding.apollomusic.data.music.other.Constant.MEDIA_ROOT_ID
-import com.plcoding.apollomusic.data.music.player.callbacks.MusicPLayerEventListener
-import com.plcoding.apollomusic.data.music.player.callbacks.MusicPlaybackPrepare
-import com.plcoding.apollomusic.data.music.player.callbacks.MusicPlayerNotificationListener
+import com.plcoding.apollomusic.other.Constant.MEDIA_ROOT_ID
+import com.plcoding.apollomusic.other.Constant.NETWORK_ERROR
+import com.plcoding.apollomusic.player.callbacks.MusicPLayerEventListener
+import com.plcoding.apollomusic.player.callbacks.MusicPlaybackPrepare
+import com.plcoding.apollomusic.player.callbacks.MusicPlayerNotificationListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.*
 import javax.inject.Inject
 
-private const val SERVICE_TAG = "Music Service"
+private const val SERVICE_TAG = "MusicService"
 
 
 
@@ -53,7 +54,7 @@ class MusicService : MediaBrowserServiceCompat() {
 
     private lateinit var musicPlayerEventListener: MusicPLayerEventListener
 
-    companion object{
+    companion object {
         var currentSongDuration = 0L
         private set
     }
@@ -95,7 +96,7 @@ class MusicService : MediaBrowserServiceCompat() {
                 fireBaseMusicSource.songs,
                 it,
                 true
-                    )
+            )
         }
 
 
@@ -147,8 +148,6 @@ class MusicService : MediaBrowserServiceCompat() {
         rootHints: Bundle?
     ): BrowserRoot? {
         return BrowserRoot(MEDIA_ROOT_ID, null)
-
-
     }
 
     override fun onLoadChildren(
@@ -166,6 +165,7 @@ class MusicService : MediaBrowserServiceCompat() {
                         }
 
                     } else {
+                        mediaSession.sendSessionEvent(NETWORK_ERROR, null)
                         result.sendResult(null)
                     }
                 }
@@ -173,7 +173,6 @@ class MusicService : MediaBrowserServiceCompat() {
                     result.detach()
                 }
             }
-
         }
     }
 }
